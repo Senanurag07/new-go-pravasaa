@@ -14,31 +14,27 @@ export default function Navbar() {
   return (
     <header
       className="
-        fixed top-0 left-0 w-full z-50
+        sticky top-0 left-0 w-full z-50
         bg-black/20 backdrop-blur-md
       "
     >
       <div
         className="
-max-container
-        px-6 py-4
-          flex items-center justify-between
+max-container          flex items-center justify-between
         "
       >
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="relative w-10 h-10">
+          <div className="relative w-40 h-20">
             <Image
-              src="/logo.png"
+              src="/assets/logo-white.png"
               alt="Go Pravasa"
               fill
               className="object-contain"
             />
           </div>
-          <span className="text-white font-semibold text-lg">
-            Go Pravasa
-          </span>
+   
         </Link>
 
         {/* Desktop Menu */}

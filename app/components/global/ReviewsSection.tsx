@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Star } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
 import {
   Dialog,
   DialogContent,
@@ -48,28 +48,12 @@ const reviews: Review[] = [
     avatar: "/assets/avatar.jpg",
     images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
   },
-    {
-    id: 1,
-    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth.",
-    name: "Andrew Fetcher",
-    subtitle: "Vietnam Tour package",
-    rating: 5,
-    avatar: "/assets/avatar.jpg",
-    images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
-  },  {
-    id: 1,
-    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth.",
-    name: "Andrew Fetcher",
-    subtitle: "Vietnam Tour package",
-    rating: 5,
-    avatar: "/assets/avatar.jpg",
-    images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
-  },  {
-    id: 1,
-    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth.",
-    name: "Andrew Fetcher",
-    subtitle: "Vietnam Tour package",
-    rating: 5,
+  {
+    id: 3,
+    text: "Amazing experience! Everything was well organized and professional.",
+    name: "John Doe",
+    subtitle: "Bali Tour Package",
+    rating: 4,
     avatar: "/assets/avatar.jpg",
     images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
   },
@@ -78,23 +62,22 @@ const reviews: Review[] = [
 /* ------------------ Section ------------------ */
 
 export default function ReviewsSection() {
-  const autoplay = useRef(
-    Autoplay({
-      delay: 3000,
-      stopOnInteraction: false,
-      stopOnMouseEnter: true,
-    })
-  );
-
   const [emblaRef] = useEmblaCarousel(
-    { loop: true, align: "start" },
-    [autoplay.current]
+    {
+      loop: true,
+      align: "start",
+      dragFree: false,
+    },
+    [
+      WheelGesturesPlugin({
+        forceWheelAxis: "x", // converts vertical wheel to horizontal
+      }),
+    ]
   );
 
   return (
     <section className="w-full bg-neutral-100 py-20">
       <div className="w-full">
-
         <h2 className="text-3xl max-container md:text-4xl font-semibold text-center mb-14">
           Our Reviews
         </h2>
@@ -102,25 +85,16 @@ export default function ReviewsSection() {
         {/* Embla */}
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex gap-8">
-
             {reviews.map((review) => (
               <div
                 key={review.id}
-                className="
-                  flex-none
-                  w-full
-                  sm:w-4/5
-                  md:w-2/3
-                  lg:w-1/3
-                "
+                className="flex-none w-full sm:w-4/5 md:w-2/3 lg:w-1/3"
               >
                 <ReviewCard review={review} />
               </div>
             ))}
-
           </div>
         </div>
-
       </div>
     </section>
   );
@@ -142,7 +116,6 @@ function ReviewCard({ review }: ReviewCardProps) {
 
   return (
     <div className="bg-white rounded-3xl p-6 shadow-sm h-full flex flex-col justify-between">
-
       <div>
         <div className="text-gray-600 text-sm leading-relaxed mb-6">
           <p ref={textRef} className="line-clamp-3">
@@ -168,7 +141,10 @@ function ReviewCard({ review }: ReviewCardProps) {
 
         <div className="grid grid-cols-4 gap-3 mb-6">
           {review.images.map((img, index) => (
-            <div key={index} className="relative h-20 rounded-xl overflow-hidden">
+            <div
+              key={index}
+              className="relative h-20 rounded-xl overflow-hidden"
+            >
               <Image src={img} alt="review" fill className="object-cover" />
             </div>
           ))}
@@ -180,7 +156,12 @@ function ReviewCard({ review }: ReviewCardProps) {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="relative w-12 h-12 rounded-full overflow-hidden">
-            <Image src={review.avatar} alt="avatar" fill className="object-cover" />
+            <Image
+              src={review.avatar}
+              alt="avatar"
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div>
@@ -191,10 +172,11 @@ function ReviewCard({ review }: ReviewCardProps) {
 
         <div className="flex items-center gap-1 bg-black text-white px-3 py-1 rounded-lg">
           <Star className="text-yellow-400" size={16} />
-          <span className="font-semibold">{review.rating.toFixed(1)}</span>
+          <span className="font-semibold">
+            {review.rating.toFixed(1)}
+          </span>
         </div>
       </div>
-
     </div>
   );
 }

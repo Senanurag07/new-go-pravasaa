@@ -8,6 +8,8 @@ import WhyChooseUs from './components/global/WhyChooseUs'
 import ReviewsSection from './components/global/ReviewsSection'
 import FaqSection from './components/global/FaqSection'
 import BlogSection from './components/global/BlogSection'
+import ReelsSection from './components/global/ReelsSection'
+
 
 function page() {
   return (
@@ -17,6 +19,7 @@ function page() {
       <PackageCard />
       <DestinationCard  />
       <OfferBanner />
+      <ReelsSection />
       <WhyChooseUs />
       <ReviewsSection />
       <FaqSection />

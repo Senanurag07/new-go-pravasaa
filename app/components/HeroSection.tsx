@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-178 overflow-hidden">
 
       {/* Background Image */}
       <div className="absolute inset-0">
