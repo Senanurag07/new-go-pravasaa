@@ -84,7 +84,7 @@ export default function PackageCard() {
       </div>
 
       {/* Content */}
-      <div className="p-4 space-y-3">
+      <div className="p-4 space-y-1.5">
 
         {/* Meta */}
         <div className="flex items-center justify-between text-sm text-gray-600">
@@ -104,12 +104,18 @@ export default function PackageCard() {
           Delightful Malaysia & Singapore
         </h3>
 
- <div className="flex flex-wrap gap-2 text-xs">
-  <span className="border rounded-full px-2.5 py-0.5">
+ <div className="flex flex-wrap  gap-2 text-xs">
+  <span className="border flex rounded-full justify-between w-full bg-[#F6F8F8] px-2.5 py-0.5">
+    <div className="flex items-center gap-1">
+
     <span className="text-orange-500 font-medium">2D</span> Singapore -{" "}
     <span className="text-orange-500 font-medium">2D</span> Singapore -{" "}
     <span className="text-orange-500 font-medium">2D</span> Singapore
+  
+    </div>
     <span className="text-orange-500 font-medium ml-1">+3</span>
+
+
   </span>
 </div>
 
@@ -144,7 +150,7 @@ export default function PackageCard() {
             </p>
           </div>
 
-          <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+          <span className="bg-green-50 border border-green-500 text-green-700 px-3 py-1 rounded-sm text-sm">
             15 Seats Left
           </span>
         </div>
@@ -163,10 +169,10 @@ export default function PackageCard() {
   <div
     className="
       absolute inset-0
-      bg-gradient-to-b
+      bg-linear-to-b
       from-orange-100
       to-transparent
-      pointer-events-none
+      pointer-events-none rounded-sm
     "
   />
 
@@ -175,7 +181,7 @@ export default function PackageCard() {
     <span>Feb 06, Feb 11...</span>
   </div>
 
-  <span className="relative text-orange-500 font-medium">
+  <span className="relative border border-orange-500 px-1 py-0.5 rounded-2xl text-orange-500 font-medium">
     +5 More
   </span>
 </div>

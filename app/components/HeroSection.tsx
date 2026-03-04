@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-160 overflow-hidden">
+    <section className="relative w-full h-145 sm:h-160 overflow-hidden">
 
       {/* Background Image */}
       <div className="absolute inset-0">

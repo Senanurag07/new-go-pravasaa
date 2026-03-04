@@ -94,7 +94,7 @@ export default function ReviewsSection() {
   );
 
   return (
-    <section className="w-full bg-[#F6F8F8] py-12 ">
+    <section className="w-full bg-[#F6F8F8] py-8 sm:py-12 ">
       <div className="w-full">
         <h2 className="text-3xl  md:text-4xl font-semibold text-center mb-12">
           Our Reviews

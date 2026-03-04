@@ -18,7 +18,7 @@ const services = [
 
 export default function ServiceCards() {
   return (
-    <section className="w-full py-10">
+    <section className="w-full py-8">
 
       <div className="max-container">
         <div
@@ -34,7 +34,7 @@ export default function ServiceCards() {
               key={i}
               className="
                 relative
-                h-[160px] sm:h-[180px] md:h-[200px] lg:h-[220px]
+                h-35 sm:h-40  lg:h-45
                 rounded-2xl
                 overflow-hidden
                 group

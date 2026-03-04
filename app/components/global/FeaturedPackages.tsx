@@ -20,7 +20,7 @@ export default function TopSellingPackages() {
   const packages = new Array(8).fill(null);
 
   return (
-    <section className="w-full bg-gray-50 py-14">
+    <section className="w-full bg-gray-50 py-8 md:py-10 ">
 
       <div className="max-container mx-auto px-6">
 
@@ -31,44 +31,37 @@ export default function TopSellingPackages() {
             Featured Packages
           </h2>
 
-          {/* Trips / Treks Toggle */}
-          <div
-            className="
-              flex
-              border border-orange-500
-              rounded-full
-              overflow-hidden
-            "
-          >
-            <button
-              onClick={() => setActiveTab("Trips")}
-              className={`
-                px-6 py-2 font-medium transition
-                ${
-                  activeTab === "Trips"
-                    ? "bg-orange-500 text-white"
-                    : "text-orange-500"
-                }
-              `}
-            >
-              Trips
-            </button>
+     <div className="flex border border-orange-500 rounded-full  w-fit">
 
-            <button
-              onClick={() => setActiveTab("Treks")}
-              className={`
-                px-6 py-2 font-medium transition
-                ${
-                  activeTab === "Treks"
-                    ? "bg-orange-500 text-white"
-                    : "text-orange-500"
-                }
-              `}
-            >
-              Treks
-            </button>
-          </div>
+  <button
+    onClick={() => setActiveTab("Trips")}
+    className={`
+      px-4 py-2 rounded-full font-medium transition
+      ${
+        activeTab === "Trips"
+          ? "bg-orange-500 text-white"
+          : "text-orange-500"
+      }
+    `}
+  >
+    Trips
+  </button>
 
+  <button
+    onClick={() => setActiveTab("Treks")}
+    className={`
+      px-6 py-2 rounded-full font-medium transition
+      ${
+        activeTab === "Treks"
+          ? "bg-orange-500 text-white"
+          : "text-orange-500"
+      }
+    `}
+  >
+    Treks
+  </button>
+
+</div>
         </div>
 
         {/* Slider */}
@@ -83,7 +76,6 @@ export default function TopSellingPackages() {
                   sm:flex-[0_0_48%]
                   md:flex-[0_0_40%]
                   lg:flex-[0_0_30%]
-                  xl:flex-[0_0_25%]
                 "
               >
                 <PackageCard />

@@ -28,7 +28,7 @@ export default function DestinationsSlider() {
   ];
 
   return (
-    <section className="w-full max-container mx-auto py-12">
+    <section className="w-full max-container mx-auto py-4 sm:py-12">
 
       {/* Heading */}
       <div className="flex flex-col gap-5 mb-8">
@@ -71,7 +71,7 @@ export default function DestinationsSlider() {
             <div
               key={index}
               className="
-                flex-[0_0_80%]
+                flex-[0_0_65%]
                 sm:flex-[0_0_45%]
                 md:flex-[0_0_30%]
                 lg:flex-[0_0_22%]

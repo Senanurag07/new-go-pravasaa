@@ -16,6 +16,15 @@ export default function UpcomingToursSlider() {
     [WheelGesturesPlugin()]
   );
 
+  // mobile filters slider
+  const [filterRef] = useEmblaCarousel(
+    {
+      align: "start",
+      dragFree: true,
+    },
+    [WheelGesturesPlugin()]
+  );
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -34,7 +43,6 @@ export default function UpcomingToursSlider() {
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
 
   const cards = [1, 2, 3, 4, 5];
-
   const filters = ["All", "Feb 2026", "Mar 2026", "Apr 2026"];
 
   return (
@@ -47,8 +55,8 @@ export default function UpcomingToursSlider() {
           Upcoming Tours
         </h2>
 
-        {/* Filter Pills */}
-        <div className="flex justify-center">
+        {/* Desktop Filters */}
+        <div className="hidden md:flex justify-center">
           <div className="flex flex-wrap gap-3">
             {filters.map((item) => (
               <button
@@ -73,9 +81,37 @@ export default function UpcomingToursSlider() {
           </div>
         </div>
 
+        {/* Mobile Filter Slider */}
+        <div className="md:hidden overflow-hidden" ref={filterRef}>
+          <div className="flex gap-3">
+            {filters.map((item) => (
+              <div key={item} className="flex-[0_0_auto]">
+                <button
+                  onClick={() => setActiveFilter(item)}
+                  className={`
+                    px-5 py-2
+                    rounded-full
+                    text-sm
+                    border
+                    whitespace-nowrap
+                    transition
+                    ${
+                      activeFilter === item
+                        ? "bg-black text-white border-black"
+                        : "bg-white text-gray-700 border-gray-300"
+                    }
+                  `}
+                >
+                  {item}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
-      {/* Left Button (Hidden on Mobile) */}
+      {/* Left Button */}
       <button
         onClick={scrollPrev}
         className="
@@ -92,7 +128,7 @@ export default function UpcomingToursSlider() {
         <ChevronLeft />
       </button>
 
-      {/* Right Button (Hidden on Mobile) */}
+      {/* Right Button */}
       <button
         onClick={scrollNext}
         className="
@@ -109,7 +145,7 @@ export default function UpcomingToursSlider() {
         <ChevronRight />
       </button>
 
-      {/* Embla */}
+      {/* Tours Slider */}
       <div className="overflow-hidden px-4 md:px-12" ref={emblaRef}>
         <div className="flex items-center py-10">
 
@@ -138,4 +174,4 @@ export default function UpcomingToursSlider() {
 
     </section>
   );
-}
+} 

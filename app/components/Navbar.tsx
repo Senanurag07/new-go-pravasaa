@@ -20,7 +20,7 @@ export default function Navbar() {
     >
       <div
         className="
-max-container          flex items-center justify-between
+max-container    flex items-center justify-between
         "
       >
 
