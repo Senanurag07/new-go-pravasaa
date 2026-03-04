@@ -31,7 +31,7 @@ export default function RootLayout({
         <div className="relative min-h-[200vh]">
 
           {/* Sticky Navbar */}
-          <div className="sticky top-0 z-50 bg-white shadow-sm">
+          <div className="sticky top-0 z-50 ">
             <Navbar />
           </div>
 

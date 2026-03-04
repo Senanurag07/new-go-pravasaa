@@ -42,8 +42,8 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="w-full bg-[#f3f3f3] rounded-2xl py-16 md:py-24">
-      <div className="max-w-5xl mx-auto px-4 md:px-8">
+    <section className="w-full max-container rounded-2xl py-16 md:py-24">
+      <div className=" mx-auto ">
 
         {/* Heading */}
         <h2 className="text-2xl md:text-4xl font-semibold mb-10 md:mb-14">

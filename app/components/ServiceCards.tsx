@@ -18,7 +18,7 @@ const services = [
 
 export default function ServiceCards() {
   return (
-    <section className="w-full py-14">
+    <section className="w-full py-10">
 
       <div className="max-container">
         <div

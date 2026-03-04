@@ -67,7 +67,9 @@ export default function VisaDetailsPage() {
 
             </div>
 <VisaGallery />
-<FAQSection />
+<div className="bg-[#f3f3f3] px-4 md:px-8 rounded-2xl"> 
+            <FAQSection />
+</div>
           </div>
 
 <div className="relative">

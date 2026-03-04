@@ -9,6 +9,7 @@ import ReviewsSection from './components/global/ReviewsSection'
 import FaqSection from './components/global/FaqSection'
 import BlogSection from './components/global/BlogSection'
 import ReelsSection from './components/global/ReelsSection'
+import UpcomingToursSlider from './components/global/UpcomingToursSlider'
 
 
 function page() {
@@ -16,7 +17,7 @@ function page() {
     <main>
       <Hero />
       <ServiceCards />
-      <PackageCard />
+      <UpcomingToursSlider />
       <DestinationCard  />
       <OfferBanner />
       <ReelsSection />
