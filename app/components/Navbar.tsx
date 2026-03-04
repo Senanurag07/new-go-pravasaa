@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <header
       className="
-        sticky top-0 left-0 w-full z-50
+        fixed top-0 left-0 w-full z-50
         bg-black/20 backdrop-blur-md
       "
     >

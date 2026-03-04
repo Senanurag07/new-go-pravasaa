@@ -10,8 +10,8 @@ export default function DestinationCard({
     <div
       className="
         relative
-        w-full max-w-[260px]
-        h-[340px]
+        w-full max-w-60
+        h-65
         rounded-3xl
         overflow-hidden
         group

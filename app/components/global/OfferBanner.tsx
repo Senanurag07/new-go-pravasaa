@@ -31,8 +31,6 @@ export default function OfferBanner() {
   return (
     <section className="w-full py-10 overflow-hidden">
       <div ref={emblaRef} className="overflow-hidden">
-        
-        {/* IMPORTANT: use pl instead of gap */}
         <div className="flex">
           {banners.map((img, index) => (
             <div
@@ -47,10 +45,10 @@ export default function OfferBanner() {
                 sm:h-60
                 md:h-72
                 lg:h-80
-                pl-6
+                pl-0 sm:pl-6
               "
             >
-              <div className="relative w-full h-full rounded-3xl overflow-hidden">
+              <div className="relative w-full h-full rounded-none sm:rounded-3xl overflow-hidden">
                 <Image
                   src={img}
                   alt="Offer Banner"
@@ -62,7 +60,6 @@ export default function OfferBanner() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

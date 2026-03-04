@@ -38,72 +38,71 @@ export default function UpcomingToursSlider() {
   const filters = ["All", "Feb 2026", "Mar 2026", "Apr 2026"];
 
   return (
-    <section className="relative w-full max-container mx-auto ">
+    <section className="relative w-full max-container mx-auto">
 
       {/* Heading */}
       <div className="flex flex-col gap-6 mb-10">
 
-  {/* Heading */}
-  <h2 className="text-3xl font-semibold">
-    Upcoming Tours
-  </h2>
+        <h2 className="text-3xl font-semibold">
+          Upcoming Tours
+        </h2>
 
-  {/* Filter Pills */}
-  <div className="flex justify-center">
-    <div className="flex flex-wrap gap-3">
+        {/* Filter Pills */}
+        <div className="flex justify-center">
+          <div className="flex flex-wrap gap-3">
+            {filters.map((item) => (
+              <button
+                key={item}
+                onClick={() => setActiveFilter(item)}
+                className={`
+                  px-5 py-2
+                  rounded-full
+                  text-sm
+                  border
+                  transition
+                  ${
+                    activeFilter === item
+                      ? "bg-black text-white border-black"
+                      : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
+                  }
+                `}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </div>
 
-      {filters.map((item) => (
-        <button
-          key={item}
-          onClick={() => setActiveFilter(item)}
-          className={`
-            px-5 py-2
-            rounded-full
-            text-sm
-            border
-            transition
-            ${
-              activeFilter === item
-                ? "bg-black text-white border-black"
-                : "bg-white text-gray-700 border-gray-300 hover:bg-gray-100"
-            }
-          `}
-        >
-          {item}
-        </button>
-      ))}
+      </div>
 
-    </div>
-  </div>
-
-</div>
-
-      {/* Left Button */}
+      {/* Left Button (Hidden on Mobile) */}
       <button
         onClick={scrollPrev}
         className="
+        hidden md:flex
         absolute left-0 top-[60%] -translate-y-1/2
         z-20
         w-10 h-10
         rounded-full
         bg-white shadow-md
-        flex items-center justify-center
+        items-center justify-center
         hover:scale-110 transition
       "
       >
         <ChevronLeft />
       </button>
 
-      {/* Right Button */}
+      {/* Right Button (Hidden on Mobile) */}
       <button
         onClick={scrollNext}
         className="
+        hidden md:flex
         absolute right-0 top-[60%] -translate-y-1/2
         z-20
         w-10 h-10
         rounded-full
         bg-orange-500 text-white shadow-md
-        flex items-center justify-center
+        items-center justify-center
         hover:scale-110 transition
       "
       >
@@ -111,18 +110,21 @@ export default function UpcomingToursSlider() {
       </button>
 
       {/* Embla */}
-      <div className="overflow-hidden px-12" ref={emblaRef}>
+      <div className="overflow-hidden px-4 md:px-12" ref={emblaRef}>
         <div className="flex items-center py-10">
 
           {cards.map((_, index) => {
             const isCenter = index === selectedIndex;
 
             return (
-              <div key={index} className="flex-[0_0_35%] px-4">
+              <div
+                key={index}
+                className="flex-[0_0_100%] md:flex-[0_0_35%] px-3 md:px-4"
+              >
                 <div
                   className={`
                     transition-all duration-500 ease-out
-                    ${isCenter ? "scale-110" : "scale-90 opacity-70"}
+                    ${isCenter ? "scale-110" : "scale-95 md:scale-90 opacity-80"}
                   `}
                 >
                   <PackageCard />

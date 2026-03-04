@@ -14,6 +14,7 @@ const reels: Reel[] = [
   { id: 2, video: "/assets/reel.mp4" },
   { id: 3, video: "/assets/reel.mp4" },
   { id: 4, video: "/assets/reel.mp4" },
+  { id: 4, video: "/assets/reel.mp4" },{ id: 5, video: "/assets/reel.mp4" },{ id: 6 , video: "/assets/reel.mp4" },
 ];
 
 export default function ReelsSection() {
@@ -62,14 +63,19 @@ export default function ReelsSection() {
     emblaApi.scrollNext();
   };
 
-  /* ---------- Wheel Scroll ---------- */
+  /* ---------- Wheel Scroll (FIXED) ---------- */
 
   useEffect(() => {
     if (!emblaApi || !containerRef.current) return;
 
     const onWheel = (e: WheelEvent) => {
+      // Allow normal vertical page scroll
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) return;
+
+      // Only control carousel if horizontal gesture
       e.preventDefault();
-      if (e.deltaY > 0) emblaApi.scrollNext();
+
+      if (e.deltaX > 0) emblaApi.scrollNext();
       else emblaApi.scrollPrev();
     };
 
@@ -89,7 +95,7 @@ export default function ReelsSection() {
           Journey in Frames
         </h2>
 
-        <div ref={containerRef} className="overflow-hidden">
+        <div ref={containerRef} className="">
           <div ref={emblaRef}>
             <div className="flex gap-8">
 
@@ -154,6 +160,7 @@ function ReelCard({ video, index, videoRefs, onEnd }: ReelCardProps) {
   const toggleSound = () => {
     const vid = videoRefs.current[index];
     if (!vid) return;
+
     vid.muted = !vid.muted;
     setMuted(vid.muted);
   };
@@ -161,10 +168,12 @@ function ReelCard({ video, index, videoRefs, onEnd }: ReelCardProps) {
   return (
     <div className="relative rounded-3xl overflow-hidden bg-black">
 
-      <div className="relative aspect-9/16">
+      <div className="relative aspect-[9/16]">
 
         <video
-          ref={(el) => { videoRefs.current[index] = el; }}
+          ref={(el) => {
+            videoRefs.current[index] = el;
+          }}
           src={video}
           muted
           playsInline

@@ -57,6 +57,24 @@ const reviews: Review[] = [
     avatar: "/assets/avatar.jpg",
     images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
   },
+    {
+    id: 4,
+    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth.",
+    name: "Andrew Fetcher",
+    subtitle: "Vietnam Tour package",
+    rating: 5,
+    avatar: "/assets/avatar.jpg",
+    images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
+  },
+    {
+    id: 5,
+    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth.",
+    name: "Andrew Fetcher",
+    subtitle: "Vietnam Tour package",
+    rating: 5,
+    avatar: "/assets/avatar.jpg",
+    images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
+  },
 ];
 
 /* ------------------ Section ------------------ */
@@ -64,7 +82,7 @@ const reviews: Review[] = [
 export default function ReviewsSection() {
   const [emblaRef] = useEmblaCarousel(
     {
-      loop: true,
+      loop: false,
       align: "start",
       dragFree: false,
     },
@@ -76,14 +94,14 @@ export default function ReviewsSection() {
   );
 
   return (
-    <section className="w-full bg-neutral-100 py-20">
+    <section className="w-full bg-neutral-100 py-20 ">
       <div className="w-full">
-        <h2 className="text-3xl max-container md:text-4xl font-semibold text-center mb-14">
+        <h2 className="text-3xl  md:text-4xl font-semibold text-center mb-14">
           Our Reviews
         </h2>
 
         {/* Embla */}
-        <div ref={emblaRef} className="overflow-hidden">
+        <div ref={emblaRef} className="max-container">
           <div className="flex gap-8">
             {reviews.map((review) => (
               <div

@@ -82,7 +82,7 @@ export default function BlogSection() {
         </div>
 
         {/* Embla Carousel */}
-        <div ref={emblaRef} className="overflow-hidden">
+        <div ref={emblaRef} className="">
           <div className="flex gap-8">
             {blogs.map((blog) => (
               <div

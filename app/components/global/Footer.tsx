@@ -12,13 +12,14 @@ const SOCIAL_LINKS = {
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 w-full min-h-[calc(90vh-60px)] bg-neutral-900 text-white">
-      <div className="max-container">
+    <footer className="fixed bottom-0 left-0 w-full bg-neutral-900 text-white h-[92vh] pb-12   overflow-hidden">
+
+      <div className="max-container mx-auto px-5 md:px-10 h-full flex flex-col justify-between">
 
         {/* Top Section */}
-        <div className="grid lg:grid-cols-2 mt-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 mt-6 md:mt-12 items-start">
 
-          <h2 className="text-4xl md:text-5xl  font-semibold leading-tight">
+          <h2 className="text-2xl md:text-5xl font-semibold leading-tight">
             Memories are Calling,
             <br />
             <span className="text-neutral-400">
@@ -27,37 +28,37 @@ export default function Footer() {
           </h2>
 
           <div>
-            <p className="text-neutral-400 text-base md:text-lg leading-relaxed mb-6">
+            <p className="text-neutral-400 text-sm md:text-lg leading-relaxed mb-4 md:mb-6">
               At Go Pravasa, we’re committed to providing stress-free travel
               experiences with a focus on comfort, safety, and convenience.
-              Here’s what sets us apart:
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2 md:gap-4">
               {Object.entries(SOCIAL_LINKS).map(([name, link]) => (
                 <a
                   key={name}
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-neutral-500 rounded-full px-5 py-2 text-sm hover:bg-white hover:text-black transition"
+                  className="border border-neutral-500 rounded-full px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm hover:bg-white hover:text-black transition"
                 >
                   {name}
                 </a>
               ))}
             </div>
           </div>
+
         </div>
 
         {/* Divider */}
-        <div className="border-t border-neutral-700 my-16" />
+        <div className="border-t border-neutral-700 my-6 md:my-12" />
 
         {/* Middle Links */}
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 text-sm md:text-base">
 
           {/* Office */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">
+            <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-6">
               Office Address
             </h4>
 
@@ -69,21 +70,19 @@ export default function Footer() {
             >
               867/79, 4th Cross Rd,
               <br />
-              Govindaraja Nagar Ward, MC Layout,
+              Vijayanagar,
               <br />
-              Vijayanagar, Bengaluru,
-              <br />
-              Karnataka 560040
+              Bengaluru 560040
             </a>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">
+            <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-6">
               Company
             </h4>
 
-            <ul className="space-y-4 text-neutral-400">
+            <ul className="space-y-2 md:space-y-4 text-neutral-400">
               <li>
                 <Link href="/about" className="hover:text-white transition">
                   About us
@@ -103,12 +102,12 @@ export default function Footer() {
           </div>
 
           {/* Policy */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">
+          <div className="col-span-2 md:col-span-1">
+            <h4 className="text-base md:text-lg font-semibold mb-3 md:mb-6">
               Policy
             </h4>
 
-            <ul className="space-y-4 text-neutral-400">
+            <ul className="space-y-2 md:space-y-4 text-neutral-400">
               <li>
                 <Link href="/terms" className="hover:text-white transition">
                   Terms & Condition
@@ -135,67 +134,66 @@ export default function Footer() {
         </div>
 
         {/* Contact Strip */}
-        <div className="mt-20 border border-neutral-700 rounded-3xl overflow-hidden">
-          <div className="grid md:grid-cols-3">
+        <div className="mt-6 md:mt-16 border border-neutral-700 rounded-2xl overflow-hidden">
 
-            {/* Get in touch */}
-            <div className="p-10 border-b md:border-b-0 md:border-r border-neutral-700">
-              <h4 className="text-xl font-semibold mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 text-sm md:text-base">
+
+            <div className="p-4 md:p-10 border-b md:border-b-0 md:border-r border-neutral-700">
+              <h4 className="text-lg font-semibold mb-1">
                 Get in Touch
               </h4>
-              <p className="text-neutral-400">
-                Have questions or need assistance?
+              <p className="text-neutral-400 text-sm">
+                Have questions?
               </p>
             </div>
 
-            {/* Phone */}
             <a
               href="tel:+919901101912"
-              className="p-10 border-b md:border-b-0 md:border-r border-neutral-700 flex items-center gap-6 hover:bg-neutral-800 transition"
+              className="p-4 md:p-10 border-b md:border-b-0 md:border-r border-neutral-700 flex items-center gap-4 md:gap-6 hover:bg-neutral-800 transition"
             >
-              <Headphones className="text-neutral-400" size={28} />
+              <Headphones className="text-neutral-400" size={22} />
               <div>
-                <p className="text-neutral-400 text-sm">
-                  Need help? Call us
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Call us
                 </p>
-                <p className="text-lg font-semibold">
+                <p className="font-semibold">
                   +91 99011 01912
                 </p>
               </div>
             </a>
 
-            {/* Email */}
             <a
               href="mailto:info@gopravasa.com"
-              className="p-10 flex items-center gap-6 hover:bg-neutral-800 transition"
+              className="p-4 md:p-10 flex items-center gap-4 md:gap-6 hover:bg-neutral-800 transition"
             >
-              <Mail className="text-neutral-400" size={28} />
+              <Mail className="text-neutral-400" size={22} />
               <div>
-                <p className="text-neutral-400 text-sm">
-                  Need help? Email us
+                <p className="text-neutral-400 text-xs md:text-sm">
+                  Email us
                 </p>
-                <p className="text-lg font-semibold">
+                <p className="font-semibold">
                   info@gopravasa.com
                 </p>
               </div>
             </a>
 
           </div>
+
         </div>
 
         {/* Bottom Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mt-16 text-neutral-500 text-sm">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6 mt-4 md:mt-10 text-neutral-500 text-xs md:text-sm">
 
-          <p>© 2024 Travila Inc. All rights reserved.</p>
+          <p>© 2024 Travila Inc.</p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2 md:gap-4">
             {Object.entries(SOCIAL_LINKS).map(([name, link]) => (
               <a
                 key={name}
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-neutral-600 rounded-full px-5 py-2 hover:bg-white hover:text-black transition"
+                className="border border-neutral-600 rounded-full px-3 md:px-5 py-1 md:py-2 hover:bg-white hover:text-black transition"
               >
                 {name}
               </a>

@@ -2,15 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import AllVisasGrid from "../components/global/Allvisas";
 
 export default function VisaHero() {
   return (
+    <main>
     <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
 
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/assets/visa-hero.jpg" 
+          src="/assets/img-1.jpg" 
           alt="Visa Background"
           fill
           priority
@@ -46,7 +48,10 @@ export default function VisaHero() {
         </Link>
 
       </div>
-
     </section>
-  );
+    <AllVisasGrid />
+    </main>
+
+);
+
 }

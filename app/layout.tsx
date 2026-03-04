@@ -41,7 +41,7 @@ export default function RootLayout({
           </main>
 
           {/* Footer Section */}
-          <div className="relative h-screen">
+          <div className="relative overflow-hidden h-screen">
             <Footer />
           </div>
 
