@@ -44,7 +44,7 @@ export default function PackageCard() {
       {/* Image Slider */}
       <div
         className="
-          relative h-[220px] w-full
+          relative h-55 w-full
           rounded-3xl
           overflow-hidden
         "

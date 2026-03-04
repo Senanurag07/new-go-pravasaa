@@ -11,6 +11,9 @@ import BlogSection from './components/global/BlogSection'
 import ReelsSection from './components/global/ReelsSection'
 import UpcomingToursSlider from './components/global/UpcomingToursSlider'
 import DestinationsSlider from './components/global/DestinationSlider'
+import TopSellingPackages from './components/global/TopSellingPackages'
+import { Feather } from 'lucide-react'
+import FeaturedPackages from './components/global/FeaturedPackages'
 
 
 function page() {
@@ -24,6 +27,14 @@ function page() {
 
       </div>
       <OfferBanner />
+
+<div className='overflow-hidden'>
+      <TopSellingPackages />
+
+</div>
+      <div className='overflow-hidden'>
+        <FeaturedPackages />
+      </div>
       <div className='overflow-hidden'>
       <ReelsSection />
 

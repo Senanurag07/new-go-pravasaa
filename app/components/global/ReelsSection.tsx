@@ -88,7 +88,7 @@ export default function ReelsSection() {
   }, [emblaApi]);
 
   return (
-    <section className="w-full bg-[#e8d9d2] py-20">
+    <section className="w-full bg-[#e8d9d2] py-8 sm:py-12">
       <div className="max-container">
 
         <h2 className="text-3xl md:text-4xl font-semibold text-center mb-14">

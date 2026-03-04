@@ -32,11 +32,11 @@ interface ReviewCardProps {
 const reviews: Review[] = [
   {
     id: 1,
-    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth.",
+    text: "Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smoot Dream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smoothDream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smoothDream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smoothDream Tours is the only way to go. We had the time of our life on our trip to the Ark. The customer service was wonderful, and everything was smooth. Anurag sen",
     name: "Andrew Fetcher",
     subtitle: "Vietnam Tour package",
     rating: 5,
-    avatar: "/assets/avatar.jpg",
+    avatar: "/assets/team-img.jpg",
     images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
   },
   {
@@ -45,7 +45,7 @@ const reviews: Review[] = [
     name: "Andrew Fetcher",
     subtitle: "Vietnam Tour package",
     rating: 5,
-    avatar: "/assets/avatar.jpg",
+    avatar: "/assets/team-img.jpg",
     images: ["/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg", "/assets/img-1.jpg"],
   },
   {
@@ -94,9 +94,9 @@ export default function ReviewsSection() {
   );
 
   return (
-    <section className="w-full bg-neutral-100 py-20 ">
+    <section className="w-full bg-[#F6F8F8] py-12 ">
       <div className="w-full">
-        <h2 className="text-3xl  md:text-4xl font-semibold text-center mb-14">
+        <h2 className="text-3xl  md:text-4xl font-semibold text-center mb-12">
           Our Reviews
         </h2>
 
@@ -106,7 +106,7 @@ export default function ReviewsSection() {
             {reviews.map((review) => (
               <div
                 key={review.id}
-                className="flex-none w-full sm:w-4/5 md:w-2/3 lg:w-1/3"
+                className="flex-none w-full sm:w-4/5 md:w-2/3 lg:w-1/2"
               >
                 <ReviewCard review={review} />
               </div>
@@ -132,69 +132,99 @@ function ReviewCard({ review }: ReviewCardProps) {
     }
   }, []);
 
-  return (
-    <div className="bg-white rounded-3xl p-6 shadow-sm h-full flex flex-col justify-between">
-      <div>
-        <div className="text-gray-600 text-sm leading-relaxed mb-6">
-          <p ref={textRef} className="line-clamp-3">
-            {review.text}
-          </p>
+return (
+  <div className="bg-white rounded-3xl p-6 shadow-sm h-84 flex flex-col">
 
-          {showReadMore && (
-            <Dialog>
-              <DialogTrigger asChild>
-                <button className="text-orange-500 font-medium mt-1">
-                  Readmore
-                </button>
-              </DialogTrigger>
+    {/* Text Section */}
+    <div className="flex-1 text-gray-600 text-sm leading-relaxed mb-4">
+      <p ref={textRef} className="line-clamp-3">
+        {review.text}
+      </p>
 
-              <DialogContent className="max-w-lg">
-                <p className="text-gray-700 leading-relaxed">
-                  {review.text}
-                </p>
-              </DialogContent>
-            </Dialog>
-          )}
-        </div>
+      {showReadMore && (
+        <Dialog>
+          <DialogTrigger asChild>
+            <button className="text-orange-500 font-medium mt-1">
+              Readmore
+            </button>
+          </DialogTrigger>
 
-        <div className="grid grid-cols-4 gap-3 mb-6">
-          {review.images.map((img, index) => (
-            <div
-              key={index}
-              className="relative h-20 rounded-xl overflow-hidden"
-            >
-              <Image src={img} alt="review" fill className="object-cover" />
+          <DialogContent className="max-w-lg">
+            {/* header: avatar + name on left, rating on right */}
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                  <Image
+                    src={review.avatar}
+                    alt="avatar"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">{review.name}</h4>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1 bg-black text-white px-3 py-1 rounded-lg">
+                <Star className="text-yellow-400" size={16} />
+                <span className="font-semibold">
+                  {review.rating.toFixed(1)}
+                </span>
+              </div>
             </div>
-          ))}
+
+            <div className="border-t border-gray-200 mb-2" />
+
+            <p className="text-gray-700 leading-relaxed">
+              {review.text}
+            </p>
+          </DialogContent>
+        </Dialog>
+      )}
+    </div>
+
+    {/* Review Images */}
+    <div className="grid grid-cols-5 gap-3 mb-4">
+      {review.images.map((img, index) => (
+        <div
+          key={index}
+          className="relative h-20 rounded-xl overflow-hidden"
+        >
+          <Image src={img} alt="review" fill className="object-cover" />
+        </div>
+      ))}
+    </div>
+
+    {/* Divider */}
+    <div className="border-t border-gray-200 mb-4" />
+
+    {/* Bottom User Section */}
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-4">
+        <div className="relative w-12 h-12 rounded-full overflow-hidden">
+          <Image
+            src={review.avatar}
+            alt="avatar"
+            fill
+            className="object-cover"
+          />
         </div>
 
-        <div className="border-t border-gray-200 mb-6" />
+        <div>
+          <h4 className="font-semibold text-lg">{review.name}</h4>
+          <p className="text-gray-500 text-sm">{review.subtitle}</p>
+        </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div className="relative w-12 h-12 rounded-full overflow-hidden">
-            <Image
-              src={review.avatar}
-              alt="avatar"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-lg">{review.name}</h4>
-            <p className="text-gray-500 text-sm">{review.subtitle}</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-1 bg-black text-white px-3 py-1 rounded-lg">
-          <Star className="text-yellow-400" size={16} />
-          <span className="font-semibold">
-            {review.rating.toFixed(1)}
-          </span>
-        </div>
+      <div className="flex items-center gap-1 bg-black text-white px-3 py-1 rounded-lg">
+        <Star className="text-yellow-400" size={16} />
+        <span className="font-semibold">
+          {review.rating.toFixed(1)}
+        </span>
       </div>
     </div>
-  );
+
+  </div>
+);
 }

@@ -13,7 +13,7 @@ export default function FaqSection() {
   );
 
   return (
-    <section className="w-full bg-neutral-100 py-20">
+    <section className="w-full bg-[bg-[#ffff]] py-20">
       <div className="max-container">
 
         {/* Header */}

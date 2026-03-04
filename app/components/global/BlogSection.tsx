@@ -68,7 +68,7 @@ export default function BlogSection() {
   }, [emblaApi]);
 
   return (
-    <section className="w-full bg-neutral-100 py-20">
+    <section className="w-full bg-neutral-100 py-8 sm:py-12">
       <div className="max-container">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">

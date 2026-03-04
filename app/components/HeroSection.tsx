@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[720px] overflow-hidden">
+    <section className="relative w-full h-160 overflow-hidden">
 
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -48,59 +48,58 @@ export default function Hero() {
       </div>
 
       {/* Bottom Stats Container */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 px-6">
+ <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 px-4 w-full max-w-md">
 
-        <div
-          className="
-          bg-white/15 backdrop-blur-md
-          border border-white/20
-          rounded-2xl
-          px-10 py-6
-          flex items-center
-          gap-10
-          text-white
-        "
-        >
+  <div
+    className="
+    bg-white/30 backdrop-blur-lg
+    border border-white/30
+    rounded-xl
+    px-4 py-3
+    flex flex-wrap justify-center items-center
+    gap-5
+    text-white
+  "
+  >
 
-          {/* Reviews */}
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full">
-              <FcGoogle size={20} />
-            </div>
-            <div>
-              <p className="font-semibold">800+</p>
-              <p className="text-white/70 text-sm">Google Reviews</p>
-            </div>
-          </div>
-
-          <div className="w-px h-8 bg-white/30" />
-
-          {/* Followers */}
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full">
-              <Instagram className="text-pink-500" size={20} />
-            </div>
-            <div>
-              <p className="font-semibold">97.5K</p>
-              <p className="text-white/70 text-sm">Followers</p>
-            </div>
-          </div>
-
-          <div className="w-px h-8 bg-white/30" />
-
-          {/* Customers */}
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full">
-              <Users className="text-blue-500" size={20} />
-            </div>
-            <div>
-              <p className="font-semibold">4500+</p>
-              <p className="text-white/70 text-sm">Happy Customer</p>
-            </div>
-          </div>
-
-        </div>
+    {/* Reviews */}
+    <div className="flex items-center gap-2">
+      <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
+        <FcGoogle size={16} />
       </div>
+
+      <div className="leading-tight">
+        <p className="text-sm font-semibold">800+</p>
+        <p className="text-white/80 text-xs">Reviews</p>
+      </div>
+    </div>
+
+    {/* Followers */}
+    <div className="flex items-center gap-2">
+      <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
+        <Instagram className="text-pink-500" size={16} />
+      </div>
+
+      <div className="leading-tight">
+        <p className="text-sm font-semibold">97.5K</p>
+        <p className="text-white/80 text-xs">Followers</p>
+      </div>
+    </div>
+
+    {/* Customers */}
+    <div className="flex items-center gap-2">
+      <div className="w-8 h-8 flex items-center justify-center bg-white rounded-full">
+        <Users className="text-blue-500" size={16} />
+      </div>
+
+      <div className="leading-tight">
+        <p className="text-sm font-semibold">4500+</p>
+        <p className="text-white/80 text-xs">Customers</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     </section>
   );

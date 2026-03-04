@@ -12,8 +12,8 @@ const bottomCards = new Array(3).fill({
 
 export default function WhyChooseUs() {
   return (
-    <section className="w-full bg-neutral-100 py-16">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full bg-[#ffff] py-8 sm:py-12">
+      <div className="max-container mx-auto px-6">
 
         {/* Header */}
         <div className="grid md:grid-cols-2 gap-8 items-start">
@@ -31,17 +31,17 @@ export default function WhyChooseUs() {
         <div className="border-t border-gray-300 my-10" />
 
         {/* Top Grid (4 Cards) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {topCards.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-orange-300 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition"
+              className="bg-white border border-orange-300 rounded-2xl p-4 text-center shadow-sm hover:shadow-md transition"
             >
-              <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
                 <Briefcase className="text-white" size={20} />
               </div>
 
-              <h3 className="text-lg font-semibold mb-3">
+              <h3 className="text-lg font-semibold mb-1">
                 {item.title}
               </h3>
 
@@ -53,19 +53,19 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Bottom Grid (3 Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 ">
           {bottomCards.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-orange-300 rounded-2xl p-8 shadow-sm hover:shadow-md transition"
+              className="bg-white border border-orange-300 rounded-2xl p-6 shadow-sm hover:shadow-md transition"
             >
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-2">
                 <div className="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center shrink-0">
                   <Briefcase className="text-white" size={20} />
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-2">
+                  <h3 className="text-lg font-semibold mb-1">
                     {item.title}
                   </h3>
 
